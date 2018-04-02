@@ -1,31 +1,33 @@
 const create = (initNum = 0, initMax = 0) => {
-  let num = initNum;
-  let max = initMax;
+  let num = initNum
+  let max = initMax
 
-  const isLast = () => num >= max;
+  const isLast = () => num >= max
 
-  const getNum = () => num;
+  const getNum = () => num
   const next = () => {
     if (isLast()) {
-      num = 0;
+      num = 0
     } else {
-      num = num + 1;
+      num += 1
     }
 
-    return num;
-  };
-  const getMax = () => max;
-  const setMax = newMax => (max = newMax);
+    return num
+  }
+  const getMax = () => max
+  const setMax = (newMax) => {
+    max = newMax
+  }
 
   return {
     next,
     getNum,
     getMax,
     setMax,
-    isLast
-  };
-};
+    isLast,
+  }
+}
 
 export default {
-  create
-};
+  create,
+}

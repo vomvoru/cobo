@@ -1,19 +1,25 @@
 {
   "name": "cobo",
   "version": "1.0.0",
-  "description":
-    "https://developer.mozilla.org/ko/docs/Games/Tutorials/%EC%88%9C%EC%88%98%ED%95%9C_%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A5%BC_%EC%9D%B4%EC%9A%A9%ED%95%9C_2D_%EB%B2%BD%EB%8F%8C%EA%B9%A8%EA%B8%B0_%EA%B2%8C%EC%9E%84",
+  "description": "",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@types/lodash": "4.14.106",
     "babel-polyfill": "6.26.0",
     "lodash": "4.17.5"
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "html-webpack-plugin": "^3.1.0",
     "parcel-bundler": "^1.6.1"
   },
   "keywords": []

@@ -1,63 +1,61 @@
-import CanvasEngine from "./CanvasEngine";
+import CanvasEngine from './CanvasEngine'
 
-const width = 500;
-const height = 300;
-const ce = CanvasEngine.create({ width, height });
+const width = 500
+const height = 300
+const ce = CanvasEngine.create({ width, height })
 
-const ballRadius = 10;
-let x = width / 2;
-let y = height - 30;
+const ballRadius = 10
+let x = width / 2
+let y = height - 30
 
-let dx = 2;
-let dy = -2;
+let dx = 2
+let dy = -2
 
-ce.addTick(cv => {
+ce.addTick((cv) => {
   if (x + dx > width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
+    dx = -dx
   }
   if (y + dy > height - ballRadius || y + dy < ballRadius) {
-    dy = -dy;
+    dy = -dy
   }
 
-  x += dx;
-  y += dy;
+  x += dx
+  y += dy
 
-  cv.arc(x, y, ballRadius);
-  cv.fillStyle = "#0095DD";
-  cv.fill("#0095DD");
-});
+  cv.arc(x, y, ballRadius)
+  cv.fill('#0095DD')
+})
 
 ce.addTick(
-  cv => {
-    cv.arc(x + 10, y + 10, ballRadius);
-    cv.fillStyle = "#0095DD";
-    cv.fill("#0095DD");
+  (cv) => {
+    cv.arc(x + 10, y + 10, ballRadius)
+    cv.fill('#0095DD')
   },
   {
-    gap: 1000
-  }
-);
+    gap: 1000,
+  },
+)
 
-const app = document.getElementById("app");
-app.appendChild(ce.getCanvas());
+const app = document.getElementById('app')
+app.appendChild(ce.getCanvas())
 
-const progress = document.getElementById("progress");
+const progress = document.getElementById('progress')
 
-let load;
+let load
 
 const loading = () => {
-  load = ce.preload().next();
+  load = ce.preload().next()
   if (load.done === true) {
-    ce.run();
-    return;
+    ce.run()
+    return
   }
 
-  let [max, value] = load.value;
-  progress.max = max;
-  progress.value = value;
-  load = ce.preload().next();
+  const [max, value] = load.value
+  progress.max = max
+  progress.value = value
+  load = ce.preload().next()
 
-  setTimeout(loading, 10);
-};
+  setTimeout(loading, 10)
+}
 
-loading();
+loading()
