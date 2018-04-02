@@ -1,2 +1,0 @@
-# cobo
-Created with CodeSandbox
